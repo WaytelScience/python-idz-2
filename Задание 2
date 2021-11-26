@@ -1,0 +1,15 @@
+from random import randint
+
+print("Задайте количество элементов в списке: ")
+N = int(input())
+a = []
+for i in range(N):
+    a.append(randint(0, 100))
+print(f"Ваш список: \n{a}")
+n = 1
+while n < len(a):
+    for i in range(len(a) - n):
+        if a[i] > a[i + 1]:
+            a[i], a[i + 1] = a[i + 1], a[i]
+    n += 1
+print(f"Отсортированный список: \n{a}")
